@@ -1,0 +1,54 @@
+# Importar librerias
+from pymongo import MongoClient
+
+# Conectarse al servidor de Mongo
+# Si tiene autenticacion ('host', port=27017, username='', password = '')
+client = MongoClient('localhost')
+
+# Crear una base de datos y almacenarlos en una variable
+db = client['prueba']
+
+# Crear una nueva coleccion
+col = db['personas']
+
+# Mostrar bases de datos
+#print(client.list_database_names())
+
+# Mostrar colecciones
+# print(db.list_collection_names())
+
+# Insertar datos a una coleccion
+# col.insert_one({'edad':20, 'nombre':"Pedro", 'intereses': ["musica", "youtube"] })
+
+# Contar cuantos documentos hay en una coleccion
+# print(col.count_documents({}))
+
+# Insertar varios documentos a una coleccion
+# col.insert_many([{'edad':20, 'nombre':"Ped", 'intereses': ["musica", "youtube"]} ,{'edad':10, 'nombre':"Pro", 'intereses': ["musica", "youtube"]} ,{'edad':50, '
+
+# Eliminar un documento
+# col.delete_one({"edad":20})
+
+# Eliminar varios documentos que cumplan con una condicion
+# col.delete_many("edad":20)
+
+# Encontrar datos en un documento
+# for documento in col.find({"edad":20}):
+#   print(documento)
+
+# Encontrar dato en un documento
+#documento = col.find_one({"edad":20})
+#print(documento)
+
+# Actualizar dato en una sola coleccion
+#col.update_one({"edad":20},{"$set": {"edad":99}})
+
+# Mostrar todos los documentos en una coleccion de una base de datos
+#for documento in col.find({}):
+#    print(documento)
+
+# Eliminar coleccion
+# db.drop_collection('personas')
+
+# Eliminar una base de datos
+# client.drop_database('prueba')
